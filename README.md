@@ -44,6 +44,13 @@ Desktop plugins plus an optional agent plugin, one install:
 <p align="center"><em>The kit in one screen: iMessage-style Bot Chat, named roster sections, and the live Computer pane.</em></p>
 
 
+## Experimental inspiration
+
+[Inner Circle Preview](inner-circle/) is an optional sage theme and responsive
+portrait roster, shared as an early design experiment for inspiration. If there
+is interest, we can polish it further together. It is disabled by default and
+is not included in the installer.
+
 ## Install
 
 One command, the desktop plugins (idempotent, no sudo, agents can run it unattended):
