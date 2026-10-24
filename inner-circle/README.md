@@ -3,7 +3,13 @@
 **Sharing for inspiration.** This is an early community design experiment for
 Hermes Desktop. If there is interest, we can polish it further together.
 
-![Illustrative sample conversation — fictional bots and text](demo/preview.svg)
+![Inner Circle setup showcase — profile artwork, folders and sample conversation](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/overview.png)
+
+[Build & culture](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/build-culture.png) · [Compact sidebar](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/compact.png) · [Watch the 22-second demo](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/inner-circle-demo.mp4)
+
+*The images show the customized setup, including its character portraits and
+native folders, with sample conversation text. Telegram/routine visuals show a
+private adapter; that adapter is not included in this public plugin.*
 
 An optional sage theme and desktop plugin, adapted from work with
 [Hermes Bot Kit](https://github.com/thomasbek3/hermes-bot-kit).
@@ -43,10 +49,13 @@ data needs to be deleted or restored.
 
 ## Demo and checks
 
-`demo/index.html` is an illustrative canvas demo with fictional bots and text.
-Serve this folder locally, for example `python3 -m http.server 8766`, and open
-`http://127.0.0.1:8766/demo/`. It shows the gallery and compact layout; it is not
-a recording of a live model. Its SVG artwork is original to this preview.
+The [companion repository](https://github.com/PetarKing/hermes-inner-circle)
+contains the gallery screenshots, compact view, 22-second video and local canvas
+showcase. They use the configured profile artwork, bot names and native folders
+with sample conversation text. They are not a recording of a live model.
+Character portrait credits are in its
+[asset notice](https://github.com/PetarKing/hermes-inner-circle/blob/main/demo/ASSETS.md).
+The showcase files are kept there to keep this optional code contribution small.
 
 For the isolated tests, install the development dependency with `npm install`,
 then run `npm test`. The plugin has no runtime npm dependency or build step.
