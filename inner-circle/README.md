@@ -1,105 +1,41 @@
-# Inner Circle Preview
+# Inner Circle — personal preset for review
 
-**Sharing for inspiration.** This is an early community design experiment for
-Hermes Desktop. If there is interest, we can polish it further together.
+[Inner Circle](https://github.com/PetarKing/hermes-inner-circle) is my personal,
+bot-centric Hermes Desktop setup, heavily inspired by Grok Bot. It puts bots
+and conversations first, hides session clutter reversibly, and uses a sage
+palette with large portraits. Shared as-is in case it is useful to others.
 
-![Two-column portrait gallery and readable sample conversation](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/gallery.jpg)
+![Portrait sidebar and readable sample chat](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/gallery.jpg)
 
-[Folders and crew](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/folders.jpg) · [Compact sidebar](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/compact-current.jpg) · [Watch the updated showcase](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/showcase.mp4)
+[Video](https://github.com/PetarKing/hermes-inner-circle/blob/main/demo/showcase.mp4) · [Folders](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/folders.jpg) · [Folded activity](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/activity.jpg)
 
-*Rendered with the public plugin, the configured character artwork and sample
-conversation text. The gallery uses two 185px portraits per row with 20px chat
-text, so the artwork and conversation remain readable together.*
+The complete opt-in package combines the portrait/compact roster, native folders,
+ordering, advancing ages, unread cues, chat/header/composer polish, quiet work
+display, collapsed Task Dock and evidence-driven activity/channel renderers.
+It reuses selected MIT-licensed Bubble Mode and Task Dock code with attribution.
+Native folders replace the older Bot Sections layer for the targeted Hermes.
+Computer viewer and texting-style remain optional upstream products.
 
-![Unread reply clears without moving or recolouring the card](https://raw.githubusercontent.com/PetarKing/hermes-inner-circle/main/demo/notification.gif)
+```sh
+hermes plugins install PetarKing/hermes-inner-circle --enable
+```
 
-*The pale sage envelope clears as its bot becomes selected. Portraits, caption
-bars and names keep their positions; the bar stays deep forest.*
+Then enable Inner Circle in Desktop and apply its sage theme. It replaces
+standalone Bubble Mode/Task Dock for this preset; do not enable duplicate copies.
+The kit's existing installer and defaults are unchanged.
 
-An optional sage theme and desktop plugin, adapted from work with
-[Hermes Bot Kit](https://github.com/thomasbek3/hermes-bot-kit).
+This contribution is an invitation to review the implementation and consider
+folding in the whole optional preset, selected ideas or compatibility work if it
+fits Bot Kit. There is no expectation to merge this design or change defaults.
+The implementation, checks, install/undo guide and integration contract live in
+one maintained repository, rather than a second stale copy in this folder.
 
-- Large edge-to-edge portraits, full-width forest caption bars and a subtle
-  selection edge around the current bot.
-- A prominent filled sage envelope for native unread replies. Quiet/read bots
-  have no dot; working, approval, stalled and background indicators stay native.
-  Opening a bot fades the unread cue without changing the card layout.
-- Compact icon-and-name rows when the native roster narrows below 220 CSS px.
-- Drag to reorder within a folder, or use Alt+Up / Alt+Down. Order stays local to
-  the desktop; the reset command restores native sorting. Cross-folder moves
-  remain native. Browsers without CSS reading-flow retain native ordering.
-- Activity ages advance from the native roster cache without opening each bot.
-- Compact selected-bot header, titles that use the available width, dark sage
-  messages and a narrower composer. Optional Sessions hiding stays off by default.
+Telegram sync, Conduit calls/transcripts, personal identities and private routing
+are not included. Generic channel/activity display hooks are; adapters can supply
+their own verified metadata. Missing evidence leaves native messages unchanged.
 
-The native roster, folder membership, status engine, menus and conversation
-history remain in Hermes. The plugin does not create bots, send messages, run routines or alter
-model settings. It uses native read-only registry metadata to identify a local
-canonical Bot Chat. Ambiguous matches and remote chat sources keep stock styling.
-
-## Try the preview
-
-This is a manually installed experiment, not a stable release or an installer.
-Use a disposable Hermes setup first. It targets the native DOM/SDK inspected in
-Hermes v0.22.5; older/newer builds may render stock when their hooks differ.
-
-1. Copy `plugin.js` to your Hermes app home's
-   `desktop-plugins/inner-circle-preview/plugin.js` (normally under `~/.hermes`).
-   Preserve an existing folder before replacing it. This is app-level, not a
-   per-profile plugin. Avoid enabling it alongside another roster/chat reskin.
-2. Reload desktop plugins from the command palette. Enable **Inner Circle
-   Preview** in Settings → Plugins; it is disabled by default.
-3. Optional: copy `inner-circle-sage.yaml` to your Hermes home's `skins/` folder,
-   then select it with `hermes config set display.skin inner-circle-sage`.
-   Record your previous skin first. The plugin itself does not change it.
-4. Open a bot's native Bot Chat. Narrow/widen the sidebar using its divider.
-   **Inner Circle Preview: show or hide Sessions** is available in the palette.
-   **Inner Circle Preview: reset custom bot order** restores native ordering.
-
-For larger conversation text without enlarging the sidebar, use Hermes Settings
-→ Appearance → Typography → Chat Text Size. UI Scale changes the whole app.
-
-To remove it, disable the plugin, remove its folder and reload plugins. Select
-your previous skin before removing the optional skin file. No session or profile
-data needs to be deleted or restored.
-
-## Demo and checks
-
-The [companion repository](https://github.com/PetarKing/hermes-inner-circle)
-contains the interactive browser showcase and current media. It runs the public
-plugin against native-shaped sample markup, with a browser-only SDK stub and
-sample conversation text. It has no Hermes connection and cannot send messages.
-The GIF shows rendered transition steps; the MP4 tours the same browser views.
-These files stay in the companion repository to keep this contribution small.
-Character credits: [demo/ASSETS.md](https://github.com/PetarKing/hermes-inner-circle/blob/main/demo/ASSETS.md).
-
-For the isolated tests, install the development dependency with `npm install`,
-then run `npm test`. The plugin has no runtime npm dependency or build step.
-
-The original customized Mac setup was visually checked at narrow and wide
-widths. This extracted preview has 17 isolated checks covering registry/scope,
-stale reads, avatar updates, cleanup, saved folder ordering, advancing ages,
-native unread changes and suppression for the current source-qualified bot.
-The browser showcase was checked at gallery and compact widths, including
-keyboard reorder and unchanged card bounds when opening an unread bot. A clean stock-Hermes acceptance pass and
-Windows/Linux visual acceptance have **not** been completed for this extraction.
-CSS depends on native markup and can need adjustment after Hermes updates.
-
-## Scope and future interest
-
-This first public slice is presentation only. The original setup also had
-evidence-backed Telegram badges and folded routine records; those depend on a
-private integration and are deliberately not included or simulated as shipped
-features here. A portable, optional adapter could follow if people want it.
-
-Useful feedback: preferred gallery/list breakpoint, keyboard/accessibility
-behaviour, light-theme treatment and compatibility with current Hermes builds.
-This remains a design experiment shared for inspiration, with further polish
-if there is interest.
-
-## Credits
-
-Thanks to Thomas Bekkers for [Hermes Bot Kit](https://github.com/thomasbek3/hermes-bot-kit)
-and Nous Research for [Hermes](https://github.com/NousResearch/hermes-agent).
-MIT; see [LICENSE](LICENSE) and [NOTICE](NOTICE). Independent community work,
-not affiliated with Nous Research or xAI.
+The repository welcomes ideas and adaptation questions, with no support or fix
+commitment. The code is experimental: stock native GUI/cross-platform acceptance
+is still distinct from isolated package/browser checks. Hermes's catalog also
+currently forbids its native DOM approach; SDK hooks would be needed for listing.
+See the [source and current verification](https://github.com/PetarKing/hermes-inner-circle/blob/main/docs/DEVELOPMENT.md).

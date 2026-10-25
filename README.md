@@ -46,10 +46,10 @@ Desktop plugins plus an optional agent plugin, one install:
 
 ## Experimental inspiration
 
-[Inner Circle Preview](inner-circle/) is an optional sage theme and responsive
-portrait roster, shared as an early design experiment for inspiration. If there
-is interest, we can polish it further together. It is disabled by default and
-is not included in the installer.
+[Inner Circle](inner-circle/) is a personal, bot-centric Hermes preset shared
+for inspiration: sage chat, portrait folders and less session clutter. The
+complete implementation is maintained separately; this is an invitation to
+review and reuse it if useful. It is opt-in and not part of this installer.
 
 ## Install
 
